@@ -1,10 +1,10 @@
-package models.dao;
+package main.models.dao;
 
-import models.connection.Connect;
-import models.pojo.Lesson;
-import models.pojo.Student;
+import main.models.connection.Connect;
+import main.models.pojo.Lesson;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,7 +19,7 @@ public class LessonDaoImpl implements LessonDao {
 
             ResultSet result = preparedStatement.executeQuery();
 
-            List<Lesson> lessonList = null;
+            List<Lesson> lessonList = new ArrayList<Lesson>();
             while (result.next()) {
                 lessonList.add(new Lesson(
                         result.getInt("id"),
@@ -94,4 +94,6 @@ public class LessonDaoImpl implements LessonDao {
             return false;
         }
     }
+
+
 }

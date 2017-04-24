@@ -1,4 +1,4 @@
-package models.pojo;
+package main.models.pojo;
 
 /**
  * Created by admin on 18.04.2017.

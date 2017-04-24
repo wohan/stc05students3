@@ -1,7 +1,6 @@
-package models.dao;
+package main.models.dao;
 
-import models.pojo.Student;
-import models.pojo.StudyGroup;
+import main.models.pojo.StudyGroup;
 
 import java.util.List;
 

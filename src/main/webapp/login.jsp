@@ -9,10 +9,11 @@
 <html>
 <head>
     <title>Login</title>
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <h1>LOOOGGIINN</h1>
-    <form action="/login" method="post">
+    <form action="/students/login" method="post">
         <input type="text" name="login" />
         <input type="text" name="password" />
         <input type="submit" value="login" />

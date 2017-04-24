@@ -1,7 +1,6 @@
-package models.dao;
+package main.models.dao;
 
-import models.pojo.Journal;
-import models.pojo.Student;
+import main.models.pojo.Journal;
 
 import java.util.List;
 

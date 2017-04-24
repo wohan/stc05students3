@@ -1,37 +1,37 @@
-package models.dao;
+package main.models.dao;
 
-import models.connection.Connect;
-import models.pojo.Student;
+import main.models.connection.Connect;
+import main.models.pojo.Journal;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by admin on 18.04.2017.
  */
-public class StudentDaoImpl implements StudentDao {
+public class JournalDaoImpl implements JournalDao {
 
-    public List<Student> getAll() {
+    public List<Journal> getAll() {
         Connection connection = Connect.initConnection();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement("select *"+
-                    " from student");
+                    " from journal");
 
             ResultSet result = preparedStatement.executeQuery();
 
-            List<Student> studentList = null;
+            List<Journal> journalList = new ArrayList<Journal>();
             while (result.next()) {
-                studentList.add(new Student(
+                journalList.add(new Journal(
                         result.getInt("id"),
-                        result.getString("name"),
-                        result.getInt("group_id"),
-                        result.getInt("age")
+                        result.getInt("lesson_id"),
+                        result.getInt("student_id")
                 ));
             }
-            return studentList;
+            return journalList;
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -39,21 +39,20 @@ public class StudentDaoImpl implements StudentDao {
         }
     }
 
-    public Student get(int id) {
+    public Journal get(int id) {
         Connection connection = Connect.initConnection();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement("select *"+
-                    " from student where id=?");
+                    " from journal where id=?");
             preparedStatement.setInt(1, id);
 
             ResultSet result = preparedStatement.executeQuery();
 
             result.next();
-            return new Student(
+            return new Journal(
                     result.getInt("id"),
-                    result.getString("name"),
-                    result.getInt("group_id"),
-                    result.getInt("age")
+                    result.getInt("lesson_id"),
+                    result.getInt("student_id")
             );
 
         } catch (SQLException e) {
@@ -62,17 +61,16 @@ public class StudentDaoImpl implements StudentDao {
         }
     }
 
-    public boolean update(Student student) {
+    public boolean update(Journal journal) {
         Connection connection = Connect.initConnection();
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE student SET(" +
-                    " name, group_id, age)" +
-                    " = (?, ?, ?)"+
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE journal SET(" +
+                    " lesson_id, student_id)" +
+                    " = (?, ?)"+
                     " WHERE id = ?");
-            preparedStatement.setString(1, student.getName());
-            preparedStatement.setInt(2, student.getGroup_id());
-            preparedStatement.setInt(3, student.getAge());
-            preparedStatement.setInt(4, student.getId());
+            preparedStatement.setInt(1, journal.getLesson_id());
+            preparedStatement.setInt(2, journal.getStudent_id());
+            preparedStatement.setInt(3, journal.getId());
             preparedStatement.executeQuery();
             return true;
         } catch (SQLException e) {
@@ -81,12 +79,12 @@ public class StudentDaoImpl implements StudentDao {
         }
     }
 
-    public boolean delete(Student student) {
+    public boolean delete(Journal journal) {
         Connection connection = Connect.initConnection();
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("Delete from student " +
+            PreparedStatement preparedStatement = connection.prepareStatement("Delete from journal " +
                     " WHERE id = ?");
-            preparedStatement.setInt(1, student.getId());
+            preparedStatement.setInt(1, journal.getId());
             preparedStatement.executeQuery();
             return true;
         } catch (SQLException e) {

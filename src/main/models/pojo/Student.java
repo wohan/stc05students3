@@ -1,9 +1,10 @@
-package models.pojo;
+package main.models.pojo;
 
 /**
  * Created by admin on 18.04.2017.
  */
 public class Student {
+
     private Integer id;
     private String name;
     private Integer group_id;

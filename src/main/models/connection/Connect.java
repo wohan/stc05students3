@@ -1,8 +1,6 @@
-package models.connection;
+package main.models.connection;
 
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Connection;
+import java.sql.*;
 
 /**
  * Created by admin on 18.04.2017.
@@ -19,7 +17,7 @@ public class Connect {
         }
         try {
             connection = DriverManager.getConnection(
-                    "jdbc:postgresql://localhost/shopping_planning", "postgres", "");
+                    "jdbc:postgresql://localhost/students", "postgres", "");
         } catch (SQLException e) {
             e.printStackTrace();
         }

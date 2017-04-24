@@ -1,6 +1,6 @@
-package models.dao;
+package main.models.dao;
 
-import models.pojo.Student;
+import main.models.pojo.Student;
 
 import java.util.List;
 
@@ -12,5 +12,6 @@ public interface StudentDao {
     public Student get(int id);
     public boolean update(Student student);
     public boolean delete(Student student);
+    public boolean insert(int id, String name, int age, int group_id);
 
 }

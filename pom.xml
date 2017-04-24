@@ -30,6 +30,20 @@
       <artifactId>javaee-api</artifactId>
       <version>5.0-2</version>
     </dependency>
+
+    <!-- https://mvnrepository.com/artifact/jstl/jstl -->
+    <dependency>
+      <groupId>jstl</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>42.0.0</version>
+    </dependency>
+
   </dependencies>
   <build>
     <finalName>stc05.students</finalName>
