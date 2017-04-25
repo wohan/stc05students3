@@ -2,6 +2,7 @@ package main.models.dao;
 
 import main.models.connection.Connect;
 import main.models.pojo.Student;
+import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -10,6 +11,7 @@ import java.util.List;
 /**
  * Created by admin on 18.04.2017.
  */
+@Repository
 public class StudentDaoImpl implements StudentDao {
 
     public List<Student> getAll() {
