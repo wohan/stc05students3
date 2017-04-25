@@ -17,7 +17,7 @@ public class Connect {
         }
         try {
             connection = DriverManager.getConnection(
-                    "jdbc:postgresql://localhost/students_list", "postgres", "");
+                    "jdbc:postgresql://localhost/students", "postgres", "");
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -4,6 +4,7 @@ import main.models.dao.UserDao;
 import main.models.dao.UserDaoImpl;
 import main.models.pojo.User;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -12,6 +13,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserServiceImpl implements UserService {
     private static final Logger logger = Logger.getLogger(UserServiceImpl.class);
+
+    @Autowired
     private UserDao userDAO;
 
     public UserDao getUserDAO() {

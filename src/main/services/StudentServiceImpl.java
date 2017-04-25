@@ -14,9 +14,13 @@ import java.util.List;
  */
 @Service
 public class StudentServiceImpl implements StudentService {
+
     private StudentDao studentDao;
 
-    @Autowired
+    public StudentServiceImpl() {
+    }
+
+
     public StudentServiceImpl(StudentDao studentDao) {
         this.studentDao = studentDao;
     }
@@ -25,6 +29,7 @@ public class StudentServiceImpl implements StudentService {
         return studentDao;
     }
 
+    @Autowired
     public void setStudentDao(StudentDao studentDao) {
         this.studentDao = studentDao;
     }

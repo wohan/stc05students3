@@ -18,7 +18,7 @@ public class UserDaoImpl implements UserDao {
         Connection connection = Connect.initConnection();
         try {
             PreparedStatement preparedStatement = connection
-                    .prepareStatement("select * from public.user where login = ? and password = ?");
+                    .prepareStatement("select * from users where login = ? and password = ?");
             preparedStatement.setString(1, login);
             preparedStatement.setString(2, password);
 
