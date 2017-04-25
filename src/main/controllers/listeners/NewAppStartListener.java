@@ -11,8 +11,7 @@ import javax.servlet.ServletContextListener;
 public class NewAppStartListener implements ServletContextListener {
 
     public void contextInitialized(ServletContextEvent servletContextEvent) {
-        PropertyConfigurator.configure(NewAppStartListener.class.getClassLoader()
-                .getResource("log4j.properties"));
+        PropertyConfigurator.configure(NewAppStartListener.class.getClassLoader().getResource("log4j.xml"));
     }
 
     public void contextDestroyed(ServletContextEvent servletContextEvent) {

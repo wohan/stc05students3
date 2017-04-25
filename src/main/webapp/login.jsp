@@ -9,7 +9,6 @@
 <html>
 <head>
     <title>Login</title>
-    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <h1>LOOOGGIINN</h1>
